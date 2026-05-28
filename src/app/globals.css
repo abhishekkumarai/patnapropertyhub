@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Color Palette - Premium Real Estate Theme */
+  --primary-rgb: 41, 65, 85; /* #294155 */
+  --primary: rgb(var(--primary-rgb));
+  --primary-hover: rgb(30, 48, 63);
+  --primary-light: rgba(var(--primary-rgb), 0.08);
+  --primary-medium: rgba(var(--primary-rgb), 0.15);
+  
+  --secondary-rgb: 217, 119, 6; /* #d97706 */
+  --secondary: rgb(var(--secondary-rgb));
+  --secondary-hover: rgb(180, 95, 4);
+  --secondary-light: rgba(var(--secondary-rgb), 0.1);
+  --secondary-border: rgb(245, 158, 11); /* #f59e0b */
+
+  --background: #f8fafc;
+  --background-card: #ffffff;
+  --background-footer: #0f172a;
+  
+  --foreground: #0f172a;
+  --foreground-muted: #64748b;
+  --foreground-light: #94a3b8;
+  --foreground-white: #ffffff;
+
+  --border-color: #e2e8f0;
+  --border-color-light: #f1f5f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0f19;
+    --background-card: #131b2e;
+    --background-footer: #080c16;
+    
+    --foreground: #f1f5f9;
+    --foreground-muted: #94a3b8;
+    --foreground-light: #64748b;
+
+    --border-color: #1e293b;
+    --border-color-light: #182235;
+  }
+}
+
+/* Tailwind v4 theme mapping */
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-medium: var(--primary-medium);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-border: var(--secondary-border);
+  
+  --color-background-card: var(--background-card);
+  --color-background-footer: var(--background-footer);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-light: var(--foreground-light);
+  --color-foreground-white: var(--foreground-white);
+  --color-border-color: var(--border-color);
+  --color-border-color-light: var(--border-color-light);
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --shadow-premium: 0 20px 40px -15px rgba(14, 77, 146, 0.12);
+  --shadow-premium-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Reset and base overrides */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans) !important;
+  z-index: 1;
+}
+
+.leaflet-bar {
+  border: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: var(--background-card) !important;
+  color: var(--foreground) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: all 0.15s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--border-color-light) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(var(--background-card), 0.7) !important;
+  backdrop-filter: blur(4px);
+  color: var(--foreground-muted) !important;
+  font-size: 10px !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
