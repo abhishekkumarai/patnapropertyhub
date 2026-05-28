@@ -51,7 +51,7 @@ export default function RootLayout({
 
         {/* Floating WhatsApp Button */}
         <a 
-          href="https://api.whatsapp.com/send?phone=%2B919472969648&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3ODAwNjMzMjgsInBob25lIjoiKzkxOTQ3Mjk2OTY0OCIsImNvbnRleHQiOiJBZmo1YnFBUlVZX3hIN25HbHJJeHlyYjBaZ2V0Y2JzenRPSjk5bmlRV2VHM3dnZlZtTGFnZDFuRnNpZzljVm9jVmRjc0RWWDZfMVVpQ0gxMm1MRzFqejN3ekxVYktENU9mRTdnRXV6cVgtaGRSUHRQa0FaejJEZXMwdG84ZVB2bV82aFJuV3R4Tm4zY0dGd25rX2tGM0cxczhnIiwic291cmNlIjoiRkJfUGFnZSIsImFwcCI6ImZhY2Vib29rIiwiZW50cnlfcG9pbnQiOiJwYWdlX2N0YSJ9.BAfLdiCH-8s58n_zmJMJ_wfA-SNikphsS3j9aeWEO3ysqCju_-hqdhFvFvLtPHLO6wrzDiJtLs6GOf1RNDSUgQ&fbclid=IwY2xjawSFLFpleHRuA2FlbQIxMABicmlkETFtaHZTYVFJd1RQTGNYU2hVc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgufSmQA9e5bX9KK2wEuMSMPyBXTBk0pTF3OkqjZ_2E1wWmxVeCKxenTJVXZ_aem_n9hCPD213_JgBrn69QXPmg" 
+          href="https://wa.me/919472969648" 
           target="_blank" 
           rel="noopener noreferrer" 
           style={{
