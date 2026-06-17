@@ -65,3 +65,9 @@ Build and publish the final production bundle:
 npx vercel --prod
 ```
 Once completed, Vercel will provide the live, secure URL hosting your Patna Property Hub application.
+
+---
+
+## Analytics
+
+Google Analytics and Vercel Analytics are integrated into this project. For configuration details, see [googletagmanager.md](file:///c:/Users/abhi3/Documents/work/aditya/patnapropertyhub/googletagmanager.md).
