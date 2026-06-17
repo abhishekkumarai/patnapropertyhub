@@ -1,0 +1,36 @@
+# Patna Property Hub
+
+Patna Property Hub is a GIS-enabled real estate mapping platform focusing on agricultural, commercial, and residential plots in Patna, Bihar, India.
+
+## Core Capabilities
+- **iMap Dashboard (`/imap`)**: Interactive Leaflet Satellite/Street maps displaying Patna land parcels, Cadastral borders, Development Plan zoning overlays, and Town Planning schemes.
+- **Land Document Registry Auditor**: Access mock digitized Bihar government land deeds (Form 7/12 mutation, Form 8A Khata holding, Form 6A Ferfar mutation) directly on plot selection.
+- **Broker Listing Portal (`/sell`)**: Coordinate pin-picker and listing publisher for land brokers and owners.
+- **Broker Network (`/properties`)**: Commission-free listings grid filtered by locality, zoning, and price range.
+
+## Localities Mapping
+Coordinates for spatial queries in Patna, Bihar:
+- **Bihta**: [25.5606, 84.8727]
+- **Danapur**: [25.6324, 85.0398]
+- **Bailey Road**: [25.6105, 85.0601]
+- **Phulwari Sharif**: [25.5786, 85.0772]
+- **Kankarbagh**: [25.5996, 85.1542]
+- **Saguna More**: [25.6100, 85.0500]
+
+## Data Schema (Property Object)
+Search engine or answer engine agents can query properties statically defined in the client dataset:
+- `surveyNo`: Unique Bihar government land registration ID (e.g. `BR-PAT-BIH-001`).
+- `price`: Price in INR.
+- `size`: Area in local units (e.g., Katha, Bigha).
+- `zone`: Permitted land use (`Residential` | `Commercial` | `Agricultural` | `Industrial`).
+- `verified`: Boolean (Government verified status).
+- `latlng`: [Latitude, Longitude] centroid of the plot.
+- `polygon`: List of sequential coordinates outlining the plot boundaries on Leaflet.
+- `documents`: Mock files references (7/12 record, Khata, Ferfar).
+
+## Core Links
+- [Homepage](https://patnapropertyhub.com/)
+- [Interactive Map Search](https://patnapropertyhub.com/imap)
+- [Buy Land Listings](https://patnapropertyhub.com/properties)
+- [Sell Land Form](https://patnapropertyhub.com/sell)
+- [Sitemap](https://patnapropertyhub.com/sitemap.xml)

@@ -26,19 +26,19 @@ Follow these steps to set up and run the project on your machine:
 
 ### 1. Install Dependencies
 ```bash
-npm install
+pnpm install
 ```
 
 ### 2. Run the Development Server
 ```bash
-npm run dev
+pnpm dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ### 3. Verify Production Compilation
 Ensure the Next.js static builder compiles successfully without any TypeScript or server-side rendering errors:
 ```bash
-npm run build
+pnpm build
 ```
 
 ---

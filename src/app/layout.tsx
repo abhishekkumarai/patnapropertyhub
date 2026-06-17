@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -17,6 +19,9 @@ export const metadata: Metadata = {
   robots: "index, follow",
   alternates: {
     canonical: "https://patnapropertyhub.com",
+  },
+  verification: {
+    google: "KDas6sIVwqONq03E85uuY5MQjJYUyVwSx5csWTcH0dw",
   },
   openGraph: {
     title: "Buy Land & Plots in Patna | Verified Plots on Interactive Maps",
@@ -35,6 +40,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ height: "100%" }}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "Patna Property Hub",
+              "image": "https://patnapropertyhub.com/logo.jpg",
+              "@id": "https://patnapropertyhub.com/#organization",
+              "url": "https://patnapropertyhub.com",
+              "telephone": "09472969648",
+              "priceRange": "₹₹₹",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "408, Pragati tower, Saguna Khagaul Rd, opposite St. karen's secondary school, Balaji Nagar",
+                "addressLocality": "Patna",
+                "addressRegion": "Bihar",
+                "postalCode": "801503",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 25.6108,
+                "longitude": 85.0416
+              },
+              "sameAs": [
+                "https://www.facebook.com/pphub/",
+                "https://www.instagram.com/propertyhubpatna1/"
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         style={{
           minHeight: "100%",
@@ -48,6 +87,23 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
 
         {/* Floating WhatsApp Button */}
         <a 
